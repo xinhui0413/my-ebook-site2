@@ -125,20 +125,183 @@
         <div id="page-5" class="book-page w-full h-full bg-white rounded-lg p-8 md:p-12">
             <div class="page-content h-full">
                 <h2 class="text-2xl font-bold text-teal-700 mb-2">第二章：一周快手健康午餐 🥗</h2>
-                <p class="text-md text-gray-500 mb-6">告别外卖的能量补给站</p>
-                <div class="space-y-6 text-gray-700">
-                    <div>
-                        <h3 class="font-semibold text-lg">懒人备餐101 (周末30分钟)</h3>
-                        <p><strong>任务：</strong>煮好主食(藜麦/糙米)，烤好蛋白质(鸡胸肉/三文鱼)，洗好蔬菜，调好万能酱汁(橄榄油+柠檬汁+蜂蜜)。</p>
-                    </div>
-                    <div>
-                        <h3 class="font-semibold text-lg">周一至周五午餐灵感 (每日5分钟)</h3>
-                        <ul class="list-disc list-inside space-y-2">
-                            <li><strong>周一：</strong>彩虹藜麦沙拉罐</li>
-                            <li><strong>周二：</strong>牛油果鸡肉全麦卷</li>
-                            <li><strong>周三：</strong>三文-鱼能量碗</li>
-                            <li><strong>周四：</strong>“剩菜变身”意面沙拉</li>
-                            <li><strong>周五：</strong>犒劳日·“万物皆可”饭团</li>
+                   <style>
+        /* --- 基础和导航栏样式 (与之前相同) --- */
+        body {
+            font-family: 'Noto Sans SC', sans-serif;
+            margin: 0;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+        .navbar {
+            display: flex;
+            align-items: center;
+            padding: 15px 25px;
+            background-color: #fff;
+            border-bottom: 1px solid #e9ecef;
+        }
+        .logo-link {
+            display: flex;
+            align-items: center;
+        }
+        .logo-image {
+            height: 35px;
+            width: auto;
+        }
+        .nav-links {
+            margin-left: auto;
+        }
+        .nav-links a {
+            margin-left: 25px;
+            text-decoration: none;
+            color: #343a40;
+            font-size: 16px;
+        }
+
+        /* --- 食谱页面主要内容样式 --- */
+        .main-content {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .page-title {
+            text-align: center;
+            font-size: 2.5em;
+            color: #2c3e50;
+            margin-bottom: 40px;
+        }
+
+        .recipe-card {
+            background-color: #fff;
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            transition: transform 0.2s ease-in-out;
+        }
+        .recipe-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .recipe-card h2 {
+            font-size: 1.8em;
+            color: #f39c12; /* 换一个更年轻活力的橙色 */
+            margin-top: 0;
+            border-bottom: 2px solid #f0f0f0;
+            padding-bottom: 15px;
+            margin-bottom: 20px;
+        }
+
+        .recipe-card h3 {
+            font-size: 1.2em;
+            color: #2c3e50;
+            margin-top: 25px;
+            margin-bottom: 15px;
+        }
+
+        .recipe-card ul, .recipe-card ol {
+            padding-left: 20px;
+            line-height: 1.8;
+        }
+
+        .recipe-card li {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 头部导航栏 -->
+    <header>
+        <nav class="navbar">
+            <a href="/" class="logo-link" title="返回首页">
+                <img src="/images/logo.png" alt="Unique 网站Logo" class="logo-image">
+            </a>
+            <div class="nav-links">
+                <a href="/posts/">文章</a>
+                <a href="/recipes/">食谱</a>
+                <a href="/about/">关于</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- 主要内容区域 -->
+    <main class="main-content">
+
+        <h1 class="page-title">00后最爱！创意懒人食谱</h1>
+
+        <!-- 食谱 1: Sushi Bake -->
+        <article class="recipe-card">
+            <h2>日式烤寿司 (Sushi Bake)</h2>
+            <h3>准备材料:</h3>
+            <ul>
+                <li>煮熟的寿司米饭：2碗 (或普通米饭)</li>
+                <li>寿司醋：2勺 (没有可省略)</li>
+                <li>蟹柳 (Crabstick)：1包，撕成丝</li>
+                <li>日式美乃滋 (Kewpie Mayo)：足量！</li>
+                <li>鱼籽 (Ebiko/Tobiko)：适量</li>
+                <li>可选：三文鱼/虾仁切丁、牛油果切片</li>
+                <li>紫菜 (Nori)：用来包着吃</li>
+            </ul>
+            <h3>步骤:</h3>
+            <ol>
+                <li>米饭和寿司醋拌匀，铺在烤盘底部，压实。</li>
+                <li>蟹柳丝和足量的美乃滋在一个碗里拌匀，可以加一点Sriracha辣椒酱增加风味。</li>
+                <li>将拌好的蟹柳混合物均匀铺在米饭上。</li>
+                <li>在最上面再挤上一层美乃滋，撒上满满的鱼籽。</li>
+                <li>送入预热180°C的烤箱或空气炸锅，烤10-15分钟，直到表面金黄微焦。</li>
+                <li>吃的时候用勺子挖，放在紫菜上包着吃，绝了！</li>
+            </ol>
+        </article>
+
+        <!-- 食谱 2: 番茄炒蛋面汤 -->
+        <article class="recipe-card">
+            <h2>暖心番茄炒蛋汤面</h2>
+            <h3>准备材料:</h3>
+            <ul>
+                <li>番茄：1-2个，切丁</li>
+                <li>鸡蛋：2个，打散</li>
+                <li>面条：任何你喜欢的，快熟面或挂面都可以</li>
+                <li>葱花：适量</li>
+                <li>调味料：盐、糖少许、番茄酱1勺（可选）</li>
+            </ul>
+            <h3>步骤:</h3>
+            <ol>
+                <li>热锅下油，倒入鸡蛋液，炒成块状盛出备用。</li>
+                <li>用锅里的底油，倒入番茄丁，翻炒至软烂出汁。可以加一点番茄酱增加风味。</li>
+                <li>加入足量热水，煮滚后下面条。</li>
+                <li>面条快熟时，加入炒好的鸡蛋块。</li>
+                <li>用盐和少许糖调味，撒上葱花即可出锅。简单又舒服！</li>
+            </ol>
+        </article>
+
+        <!-- 食谱 3: 健康鸡肉卷 -->
+        <article class="recipe-card">
+            <h2>健康鸡肉卷 (Healthy Chicken Wrap)</h2>
+            <h3>准备材料:</h3>
+            <ul>
+                <li>全麦卷饼 (Tortilla Wrap)：1-2片</li>
+                <li>鸡胸肉：1块，煮熟或煎熟后撕成丝</li>
+                <li>生菜/紫甘蓝：适量，洗净</li>
+                <li>小番茄/黄瓜：切片或切条</li>
+                <li>酱料：美乃滋、千岛酱或低卡酸奶酱</li>
+            </ul>
+            <h3>步骤:</h3>
+            <ol>
+                <li>将卷饼皮用平底锅稍微加热一下会更香软。</li>
+                <li>在卷饼中间铺上生菜。</li>
+                <li>依次放上鸡丝、番茄和黄瓜。</li>
+                <li>挤上你喜欢的酱料。</li>
+                <li>先把卷饼的下端向上折起一部分，再把两边向中间卷紧。</li>
+                <li>从中间切开，就可以开吃啦！非常适合当早餐或轻午餐。</li>
+            </ol>
+        </article>
+
+    </main>
+
+</body>
+</html>
                         </ul>
                     </div>
                 </div>
@@ -241,3 +404,4 @@
 </body>
 
 </html>
+
