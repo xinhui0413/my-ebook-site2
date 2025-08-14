@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>《懒人精致生活手册》- Unique 独家赠品</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Noto Sans SC', sans-serif;
+            background-color: #f0f4f8;
+        }
+        .book-container {
+            width: 90%;
+            max-width: 1000px;
+            height: 80vh;
+            max-height: 700px;
+        }
+        .book-page {
+            display: none;
+            backface-visibility: hidden;
+            transition: transform 0.6s;
+            transform-style: preserve-3d;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+        .book-page.active {
+            display: block;
+        }
+        .page-content {
+            overflow-y: auto;
+            -webkit-overflow-scrolling: touch;
+        }
+        .nav-button {
+            transition: all 0.2s ease-in-out;
+        }
+        .nav-button:hover {
+            transform: scale(1.1);
+            background-color: #2DD4BF;
+        }
+        .toc-item {
+            transition: all 0.2s ease-in-out;
+            border-bottom: 2px solid transparent;
+        }
+        .toc-item:hover {
+            transform: translateX(5px);
+            border-bottom-color: #2DD4BF;
+        }
+    </style>
+</head>
+<body class="flex items-center justify-center min-h-screen">
+
+    <div class="book-container relative">
+        <!-- Page 1: Cover -->
+        <div id="page-1" class="book-page active w-full h-full bg-white rounded-lg flex items-center justify-center p-8">
+            <div class="text-center">
+                <img src="https://placehold.co/200x200/E0F7FA/00796B?text=Unique" alt="Unique品牌Logo" class="mx-auto rounded-full mb-8 shadow-lg">
+                <h1 class="text-4xl md:text-5xl font-bold text-teal-800">懒人精致生活手册</h1>
+                <p class="text-lg text-gray-500 mt-4">—— 献给每一个聪明、爱自己的你</p>
+                <p class="text-sm text-teal-500 mt-12">Unique 独家赠品</p>
+            </div>
+        </div>
+
+        <!-- Page 2: Foreword -->
+        <div id="page-2" class="book-page w-full h-full bg-white rounded-lg p-8 md:p-12">
+            <div class="page-content h-full">
+                <h2 class="text-2xl font-bold text-teal-700 mb-6 border-b-2 border-teal-200 pb-2">前言</h2>
+                <p class="text-lg font-semibold text-gray-700 mb-4">你赢回的时间，值得被“浪费”在更美好的事物上</p>
+                <div class="text-gray-600 leading-relaxed space-y-4">
+                    <p>亲爱的，</p>
+                    <p>你好！欢迎打开这本专为你打造的手册。</p>
+                    <p>我们创造 Unique 冰晶防晒喷雾的初衷，不仅仅是为你抵挡阳光，更是想为你从每天繁忙的日程中，“偷”回那宝贵的10-15分钟。</p>
+                    <p>但这只是第一步。</p>
+                    <p>更重要的是，如何让这些赢回的时间，真正为你所用，变成实实在在的从容、愉悦和精致感？</p>
+                    <p>这本手册，就是我们的答案。</p>
+                    <p>我们不会给你复杂的理论和难以坚持的计划。这里只有最聪明、最高效、最“懒人友好”的变美、健康和提升幸福感的秘诀。</p>
+                    <p>现在，泡一杯你喜欢的茶或咖啡，让我们一起开启这段“毫不费力变精致”的旅程吧！</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Page 3: Table of Contents -->
+        <div id="page-3" class="book-page w-full h-full bg-white rounded-lg p-8 md:p-12">
+             <div class="page-content h-full">
+                <h2 class="text-3xl font-bold text-teal-700 mb-10 border-b-2 border-teal-200 pb-3">目录</h2>
+                <ul class="space-y-8 text-xl md:text-2xl">
+                    <li class="toc-item"><a href="#" onclick="goToPage(4)" class="text-gray-700 hover:text-teal-600">第一章：10分钟出门挑战 🏃‍♀️</a></li>
+                    <li class="toc-item"><a href="#" onclick="goToPage(5)" class="text-gray-700 hover:text-teal-600">第二章：一周快手健康午餐 🥗</a></li>
+                    <li class="toc-item"><a href="#" onclick="goToPage(6)" class="text-gray-700 hover:text-teal-600">第三章：3款“续命”App 📱</a></li>
+                    <li class="toc-item"><a href="#" onclick="goToPage(7)" class="text-gray-700 hover:text-teal-600">结语：你的生活，本该闪亮 ✨</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <!-- Page 4: Chapter 1 -->
+        <div id="page-4" class="book-page w-full h-full bg-white rounded-lg p-8 md:p-12">
+            <div class="page-content h-full">
+                <h2 class="text-2xl font-bold text-teal-700 mb-2">第一章：10分钟出门挑战 🏃‍♀️</h2>
+                <p class="text-md text-gray-500 mb-6">告别匆忙的精致“伪素颜”妆</p>
+                <div class="space-y-6 text-gray-700">
+                    <div>
+                        <h3 class="font-semibold text-lg">Step 1: 3分钟 · 无瑕底妆</h3>
+                        <p><strong>武器：</strong>气垫粉底 或 有色面霜。<br><strong>秘诀：</strong>放弃厚重的粉底液。用气垫粉扑从脸部中央向外快速拍开，瑕疵处重点叠加。保留皮肤质感，更自然。</p>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold text-lg">Step 2: 2分钟 · 精气神眉眼</h3>
+                        <p><strong>武器：</strong>双头眉笔、睫毛夹。<br><strong>秘诀：</strong>顺着眉毛填补空隙，用刷头晕染眉头。夹翘睫毛是放大双眼的灵魂！</p>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold text-lg">Step 3: 3分钟 · 元气色泽</h3>
+                        <p><strong>武器：</strong>唇颊两用膏/霜。<br><strong>秘诀：</strong>用指腹蘸取，在苹果肌轻拍做腮红，剩余的轻拍眼皮，最后涂抹嘴唇。一物多用！</p>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold text-lg">Step 4: 30秒 · 定妆 & 光泽</h3>
+                        <p><strong>武器：</strong>Unique 冰晶防晒喷雾。<br><strong>秘诀：</strong>完妆后，距离面部20cm均匀喷洒。定妆、防晒、增加光泽感，一步到位！</p>
+                    </div>
+                </div>
+                 <img src="https://placehold.co/600x300/FEF2F2/DC2626?text=精致伪素颜妆" alt="[化妆品图片]" class="mt-6 rounded-lg shadow-sm w-full object-cover h-48">
+            </div>
+        </div>
+
+        <!-- Page 5: Chapter 2 -->
+        <div id="page-5" class="book-page w-full h-full bg-white rounded-lg p-8 md:p-12">
+            <div class="page-content h-full">
+                <h2 class="text-2xl font-bold text-teal-700 mb-2">第二章：一周快手健康午餐 🥗</h2>
+                <p class="text-md text-gray-500 mb-6">告别外卖的能量补给站</p>
+                <div class="space-y-6 text-gray-700">
+                    <div>
+                        <h3 class="font-semibold text-lg">懒人备餐101 (周末30分钟)</h3>
+                        <p><strong>任务：</strong>煮好主食(藜麦/糙米)，烤好蛋白质(鸡胸肉/三文鱼)，洗好蔬菜，调好万能酱汁(橄榄油+柠檬汁+蜂蜜)。</p>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold text-lg">周一至周五午餐灵感 (每日5分钟)</h3>
+                        <ul class="list-disc list-inside space-y-2">
+                            <li><strong>周一：</strong>彩虹藜麦沙拉罐</li>
+                            <li><strong>周二：</strong>牛油果鸡肉全麦卷</li>
+                            <li><strong>周三：</strong>三文-鱼能量碗</li>
+                            <li><strong>周四：</strong>“剩菜变身”意面沙拉</li>
+                            <li><strong>周五：</strong>犒劳日·“万物皆可”饭团</li>
+                        </ul>
+                    </div>
+                </div>
+                <img src="https://placehold.co/600x300/F0FDF4/16A34A?text=健康午餐" alt="[健康午餐图片]" class="mt-6 rounded-lg shadow-sm w-full object-cover h-64">
+            </div>
+        </div>
+
+        <!-- Page 6: Chapter 3 -->
+        <div id="page-6" class="book-page w-full h-full bg-white rounded-lg p-8 md:p-12">
+            <div class="page-content h-full">
+                <h2 class="text-2xl font-bold text-teal-700 mb-2">第三章：3款“续命”App 📱</h2>
+                <p class="text-md text-gray-500 mb-6">你的私人幸福感加油站</p>
+                <div class="space-y-8 text-gray-700">
+                    <div>
+                        <h3 class="font-semibold text-lg">1. Calm：找回内心的平静</h3>
+                        <p>每天给大脑做个10分钟的Spa。适合通勤或午休时快速“充电”，它的“睡眠故事”是失眠夜的救星。</p>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold text-lg">2. Daylio Journal：轻松记录情绪</h3>
+                        <p>最没有压力的自我探索工具。无需打字，只需选择表情和活动图标，就能帮你了解什么事会让你开心。</p>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold text-lg">3. Forest：专注森林</h3>
+                        <p>用种树的乐趣，换来宝贵的专注力。当你需要专注时，在App里种下一棵树，如果你离开App，树就会枯萎。</p>
+                    </div>
+                </div>
+                 <img src="https://placehold.co/600x300/EFF6FF/3B82F6?text=提升幸福感" alt="[手机App界面图片]" class="mt-8 rounded-lg shadow-sm w-full object-cover h-48">
+            </div>
+        </div>
+        
+        <!-- Page 7: Conclusion -->
+        <div id="page-7" class="book-page w-full h-full bg-white rounded-lg p-8 md:p-12 flex flex-col justify-between">
+            <div>
+                <h2 class="text-2xl font-bold text-teal-700 mb-6 border-b-2 border-teal-200 pb-2">结语</h2>
+                <p class="text-lg font-semibold text-gray-700 mb-4">你的生活，本该如此闪亮</p>
+                <div class="text-gray-600 leading-relaxed space-y-4">
+                    <p>亲爱的，感谢你读到这里。</p>
+                    <p>希望这本小小的手册，能像 Unique 防晒喷雾一样，成为你生活中的“秘密武器”，帮你轻松过滤掉不必要的繁琐，留下更多时间与空间，去创造、去感受、去成为那个你真正想成为的人。</p>
+                    <p class="font-bold text-teal-600">记住，毫不费力的背后，是聪明的选择。</p>
+                    <p>愿你的每一天，都如阳光般灿烂，清爽而自由。</p>
+                </div>
+            </div>
+            <div class="text-right mt-8">
+                <p class="font-semibold">With Love,</p>
+                <p class="font-bold text-teal-600">The Unique Team</p>
+            </div>
+        </div>
+
+
+        <!-- Navigation -->
+        <div class="absolute bottom-4 left-1/2 -translate-x-1/2 flex items-center space-x-4 z-10">
+            <button id="prev-btn" onclick="prevPage()" class="nav-button bg-teal-400 text-white rounded-full w-12 h-12 flex items-center justify-center shadow-lg disabled:opacity-50 disabled:cursor-not-allowed" disabled>
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" /></svg>
+            </button>
+            <span id="page-indicator" class="text-gray-600 font-semibold">1 / 7</span>
+            <button id="next-btn" onclick="nextPage()" class="nav-button bg-teal-400 text-white rounded-full w-12 h-12 flex items-center justify-center shadow-lg">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
+            </button>
+        </div>
+    </div>
+
+    <script>
+        let currentPage = 1;
+        const totalPages = 7;
+        const pages = document.querySelectorAll('.book-page');
+        const prevBtn = document.getElementById('prev-btn');
+        const nextBtn = document.getElementById('next-btn');
+        const pageIndicator = document.getElementById('page-indicator');
+
+        function updatePage() {
+            pages.forEach(page => page.classList.remove('active'));
+            document.getElementById(`page-${currentPage}`).classList.add('active');
+            pageIndicator.textContent = `${currentPage} / ${totalPages}`;
+            
+            prevBtn.disabled = currentPage === 1;
+            nextBtn.disabled = currentPage === totalPages;
+        }
+
+        function goToPage(pageNumber) {
+            if (pageNumber >= 1 && pageNumber <= totalPages) {
+                currentPage = pageNumber;
+                updatePage();
+            }
+        }
+
+        function nextPage() {
+            if (currentPage < totalPages) {
+                currentPage++;
+                updatePage();
+            }
+        }
+
+        function prevPage() {
+            if (currentPage > 1) {
+                currentPage--;
+                updatePage();
+            }
+        }
+    </script>
+</body>
+</html>
